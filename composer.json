@@ -1,0 +1,16 @@
+{
+    "name": "OpenMageModuleFostering/dDLMD3ISLu4sOUad",
+    "type": "magento-module",
+    "license": "Open-Software-License-(OSL)",
+    "homepage": "",
+    "description": "The FAQ Management Extension allows you to add frequently asked questions section conveniently on your website. From the backend Admin can enter questions and answers which can be displayed on the website.",
+    "authors": [
+    {
+        "name": "Kashif Saleem",
+        "email": "ksaleem@folio3.com"
+    }
+],
+    "suggest": {
+        "magento-hackathon/magento-composer-installer": "*"
+    }
+}

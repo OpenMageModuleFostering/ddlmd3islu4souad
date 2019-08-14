@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package>
+    <name>dDLMD3ISLu4sOUad</name>
+    <version>0.0.1</version>
+    <stability>stable</stability>
+    <license uri="http://opensource.org/licenses/osl-3.0.php">Open Software License (OSL)</license>
+    <channel>community</channel>
+    <extends/>
+    <summary>The FAQ Management Extension allows you to add frequently asked questions section conveniently on your website. From the backend Admin can enter questions and answers which can be displayed on the website.</summary>
+    <description>The FAQ Management Extension allows you to add frequently asked questions section conveniently on your website. From the backend Admin can enter questions and answers which can be displayed on the website.&#xD;
+&#xD;
+It is compatible with all Magento versions from 1.5.1.0, 1.6.0.0, 1.7.0.0, 1.8.0.0 or latest 1.9.0.1. </description>
+    <notes>This module provide complete FAQ management.</notes>
+    <authors><author><name>Kashif Saleem</name><user>ksaleem</user><email>ksaleem@folio3.com</email></author></authors>
+    <date>2015-07-10</date>
+    <time>11:41:41</time>
+    <contents><target name="mageetc"><dir><dir name="app"><dir name="etc"><file name="module" hash=""/></dir></dir></dir></target><target name="magedesign"><dir><dir name="app"><dir name="design"><dir name="frontend"><dir name="rwd"><dir name="default"><file name="layout" hash=""/></dir></dir></dir></dir></dir></dir></target></contents>
+    <compatible/>
+    <dependencies><required><php><min>5.5.0</min><max>6.0.0</max></php></required></dependencies>
+</package>
