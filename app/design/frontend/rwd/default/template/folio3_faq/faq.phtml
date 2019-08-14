@@ -1,0 +1,75 @@
+<div class="content-header">
+    <table cellspacing="0" class="grid-header">
+        <tr>
+            <td><h3><?php print $this->__('FAQ')?></h3></td>
+        </tr>
+    </table>
+</div>
+<script type="text/javascript">
+    $(function(){
+        $('#accordion').accordion();
+    })
+	function showAnswer(divID)
+	{
+		
+		//var ansNo = 'li-'+divID;
+		var x = document.getElementsByClassName('li-'+divID);
+		//alert(x);
+		var i;
+		for (i = 0; i < x.length; i++) {
+			if (x[i].style.display == 'none')
+			{
+				x[i].style.display = 'block'; 
+			}
+			else
+			{
+				x[i].style.display = 'none';   	
+			}	
+		}
+	}
+</script>
+<div class="entry-edit">
+			<div class="fieldset">
+			<!--<table class="data border tabledata" id="list_table">
+				
+				<tbody id="2_container" class="innertabledata" style="background-color: #ffffff;">-->
+				
+				<?php 
+					/*$collection = Mage::getModel('folio3_faq/faq')->getCollection();
+					$faq_detail = $collection->getData();
+					
+					foreach($faq_detail as $row)
+					{
+						echo ("<tr>");
+						echo ("<td style='line-height:30px'><b>".$row['faq_question']."</b></td>");
+						echo ("</tr>");
+						
+						echo ("<tr>");
+						echo ("<td style='line-height:30px'>".$row['faq_answer']."</td>");
+						echo ("</tr>");
+						
+						echo ("<tr>");
+						echo ("<td style='line-height:25px'>&nbsp;</td>");
+						echo ("</tr>");
+					}*/			
+				?>
+				<!--</tbody>
+				<tfoot>
+					
+				</tfoot>
+			</table>-->
+			
+			<?php 
+					$collection = Mage::getModel('folio3_faq/faq')->getCollection();
+					$faq_detail = $collection->getData();
+					
+					foreach($faq_detail as $row)
+					{
+						echo ("<ul onclick='showAnswer(".$row['id'].")' style='line-height:30px;cursor:pointer'><b>".$row['faq_question']."</b>");
+						echo ("<li class='li-".$row['id']."' style='display:none'>".$row['faq_answer']."</li>");
+						echo ("</ul>");
+					}			
+			?>
+			
+			</div>
+</div>

@@ -1,0 +1,193 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Folio3_Faq>
+            <!--
+            This is the version number that our module is currently at.
+            In order for setup scripts to run, their version number must
+            be less than or equal to this value.
+
+            As we add upgrade scripts, we increment this value. The next time
+            your Magento instance is accessed, Magento will compare values in
+            the database table 'core_resource' against this value. If the
+            database is lower, it will attempt to run any setup scripts for
+            the module and then update the database table to match this value.
+            -->
+            <version>0.0.1</version>
+        </Folio3_Faq>
+    </modules>
+    <resources>
+        <folio3_faq_read>
+            <connection>
+                <use>core_read</use>
+            </connection>
+        </folio3_faq_read>
+        <folio3_faq_write>
+            <connection>
+                <use>core_write</use>
+            </connection>
+        </folio3_faq_write>
+        <folio3_faq_setup>
+            <setup>
+                <module>Folio3_Faq</module>
+                <class>Folio3_Faq_Model_Resource_Setup</class>
+            </setup>
+            <connection>
+                <use>core_setup</use>
+            </connection>
+        </folio3_faq_setup>
+    </resources>
+		
+    <global>
+
+        
+        <blocks>
+            <!--
+            add an adminhtml block definition
+            -->
+            <folio3_faq_adminhtml>
+                <class>Folio3_Faq_Block_Adminhtml</class>
+            </folio3_faq_adminhtml>
+            <!--
+            add an frontend block definition
+            -->
+            <folio3_faq>
+                <class>Folio3_Faq_Block</class>
+            </folio3_faq>
+       
+        </blocks>
+        <!--
+        Add a helper definition for use in adminhtml.xml menu translation.
+        -->
+        <helpers>
+            <folio3_faq>
+                <class>Folio3_Faq_Helper</class>
+            </folio3_faq>
+        </helpers>
+        <models>
+            <!--
+            This is the model alias referred to in install-0.0.1.php.
+            -->
+            <folio3_faq>
+                <!--
+                This tells Magento where to find models for this module.
+                -->
+                <class>Folio3_Faq_Model</class>
+                <!--
+                This tells Magento where to find resource
+                materials for this module.
+                -->
+                <resourceModel>folio3_faq_resource</resourceModel>
+            </folio3_faq>
+
+            <!--
+            This alias must match the <resourceModel/> value above.
+            -->
+            <folio3_faq_resource>
+                <!--
+                This tells Magento where to find resource
+                models for this module.
+                -->
+                <class>Folio3_Faq_Model_Resource</class>
+                <entities>
+                    <!--
+                    This is the table alias referred to in install-0.0.1.php.
+                    -->
+                    <faq>
+                        <!--
+                            This is the name of the database table itself.
+                        -->
+                        <table>folio3_faq</table>
+                    </faq>
+                </entities>
+            </folio3_faq_resource>
+        </models>
+
+        <resources>
+            <!--
+            This must match our folder name in the module sql folder.
+            -->
+            <folio3_faq_setup>
+                <setup>
+                    <!--
+                    This defines which module the setup
+                    scripts in this location belong to.
+                    -->
+                    <module>Folio3_Faq</module>
+                    <!--
+                    In each setup script, this
+                    value determines the class of $this.
+                    -->
+                    <class>Mage_Core_Model_Resource_Setup</class>
+                </setup>
+                <!--
+                This is relevant only if you have multiple database connections.
+                -->
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </folio3_faq_setup>
+        </resources>
+
+		
+    </global>
+    <!-- Add a router for access to our admin panel controller. -->
+    <admin>
+        <routers>
+            <!-- This is the alias for this router. -->
+            <folio3_faq_admin>
+                <!--
+                This basically informs Magento to use the
+                admin scope for requests to this router.
+                -->
+                <use>admin</use>
+                <args>
+                    <!--
+                    This tells Magento where to find
+                    adminhtml controllers for this module.
+                    -->
+                    <module>Folio3_Faq_Adminhtml</module>
+                    <!-- This is the term used in the actual URL. -->
+                    <frontName>faq</frontName>
+                </args>
+            </folio3_faq_admin>
+        </routers>
+    </admin>
+	
+    <frontend>
+        <layout>
+            <updates>
+                <folio3_faq>
+                    <file>Folio3_Faq.xml</file>
+                </folio3_faq>
+            </updates>
+        </layout>
+        <routers>
+            <folio3_faq>
+                <use>standard</use>
+                <args>
+                    <module>Folio3_Faq</module>
+                    <frontName>faq</frontName>
+                </args>
+            </folio3_faq>
+        </routers>
+        <routers>	
+            <customer>
+                <args>
+                    <modules>
+                        <folio3_faq before="Mage_Customer">Folio3_Faq</folio3_faq>
+                    </modules>
+                </args>
+            </customer>
+        </routers>
+    </frontend>
+    <adminhtml>
+        <layout>
+            <updates>
+                <folio3_faq>
+                    <file>folio3_faq.xml</file>
+                </folio3_faq>
+            </updates>
+        </layout>
+    </adminhtml>
+</config>

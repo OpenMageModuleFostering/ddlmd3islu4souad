@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config>
+    <menu>
+        <folio3_faq translate="title" module="folio3_faq">
+          <title>Manage FAQ</title>
+          <sort_order>76</sort_order>
+          <action>folio3_faq_admin/faq</action>	
+        </folio3_faq>
+    </menu>
+</config>
