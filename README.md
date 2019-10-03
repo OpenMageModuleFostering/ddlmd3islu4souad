@@ -1,3 +1,5 @@
+
+
 ## Original Package Description
 
 The FAQ Management Extension allows you to add frequently asked questions section conveniently on your website. From the backend Admin can enter questions and answers which can be displayed on the website.
